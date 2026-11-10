@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="calculator">
+  <div id="result"></div>
+  <div class="buttons">
+    <button onclick="display(0)">0</button>
+    <button onclick="display(1)">1</button>
+    <button onclick="display(2)">2</button>
+    <button onclick="display(3)">3</button>
+    <button onclick="display(4)">4</button>
+    <button onclick="display(5)">5</button>
+    <button onclick="display(6)">6</button>
+    <button onclick="display(7)">7</button>
+    <button onclick="display(8)">8</button>
+    <button onclick="display(9)">9</button>
+    <button onclick="display('+')" class="operator">+</button>
+    <button onclick="display('-')" class="operator">-</button>
+    <button onclick="display('/')" class="operator">/</button>
+    <button onclick="display('*')" class="operator">*</button>
+    <button onclick="answer()" class="equal">=</button>
+    <button onclick="clearAll()" class="clear">C</button>
+    <button onclick="deleteLast()">Del</button>
+    <div>
+<div>
+  <script>
+    const result = document.getElementById("result")
+    result.innerText = "0"
+
+    const display = (value) => {
+      if (result.innerText === "0") {
+        result.innerText = value
+      } else {
+        result.innerText += value
+      }
+    }
+
+    const answer = () => {
+        result.innerText = eval(result.innerText)
+    }
+
+    const clearAll = () => {
+      result.innerText = "0"
+    }
+    const deleteLast = () => {
+      result.innerText = result.innerText.slice(0, result.innerText.length-1)
+      if(result.innerText === ""){
+        result.innerText = "0"
+      } 
+    }
+  </script>
+
+
+</body>
+</html>
